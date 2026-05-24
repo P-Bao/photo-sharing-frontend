@@ -9,7 +9,7 @@
 const baseUrl = "https://47y2yt-8081.csb.app";
 
 export function getApiUrl(url) {
-  return `${baseUrl}/${url}`;
+  return `${baseUrl}/${String(url).replace(/^\/+/, "")}`;
 }
 
 async function fetchModel(url, options = {}) {
@@ -30,7 +30,7 @@ async function fetchModel(url, options = {}) {
       requestBody = JSON.stringify(body);
     }
 
-    const response = await fetch(`${baseUrl}/${url}`, {
+    const response = await fetch(getApiUrl(url), {
       method: method,
       credentials: "include",
       ...requestOptions,

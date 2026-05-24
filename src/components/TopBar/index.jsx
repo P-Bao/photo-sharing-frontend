@@ -45,7 +45,7 @@ function TopBar({ loggedInUser, onLogout, onPhotoUploaded }) {
 
   const handleLogout = async () => {
     try {
-      await fetch(`/admin/logout`, {
+      await fetchModel(`/admin/logout`, {
         method: "POST",
       });
     } catch (error) {
