@@ -11,12 +11,13 @@ import {
   ListItem,
   TextField,
   Button,
+  Alert,
 } from "@mui/material";
 
 import "./styles.css";
 import { Link, useParams } from "react-router-dom";
 // import models from "../../modelData/models";
-import fetchModel from "../../lib/fetchModelData";
+import fetchModel, { getApiUrl } from "../../lib/fetchModelData";
 
 /**
  * Define UserPhotos, a React component of Project 4.
@@ -83,9 +84,7 @@ function UserPhotos({ onCommentAdd, activityVersion = 0 }) {
           <CardHeader title={`Posted: ${photo.date_time}`} />
           <CardMedia
             component="img"
-            image={`${API_BASE_URL}/images/${encodeURIComponent(
-              photo.file_name
-            )}`}
+            image={getApiUrl(`/images/${encodeURIComponent(photo.file_name)}`)}
             alt={`Photo ${photo._id}`}
           />
           <CardContent>

@@ -8,6 +8,10 @@
 
 const baseUrl = "https://47y2yt-8081.csb.app";
 
+export function getApiUrl(url) {
+  return `${baseUrl}/${url}`;
+}
+
 async function fetchModel(url, options = {}) {
   // const models = null;
   // return models;
