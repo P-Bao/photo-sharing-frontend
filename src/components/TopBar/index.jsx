@@ -91,14 +91,17 @@ function TopBar({ loggedInUser, onLogout, onPhotoUploaded }) {
           {context}
         </Typography>
 
-        <div className="topBar-actions">
+        <div className="topbar-actions">
           {loggedInUser ? (
             <>
-              <Typography variant="body1" color="inherit">
-                {" "}
-                Hi, {loggedInUser.first_name}{" "}
+              <Typography variant="body1" className="topbar-greeting">
+                Hi, {loggedInUser.first_name}
               </Typography>
-              <Button variant="contained" component="label" color="secondary">
+              <Button
+                variant="contained"
+                component="label"
+                className="topbar-upload-button"
+              >
                 Add photo
                 <input
                   type="file"
@@ -109,35 +112,31 @@ function TopBar({ loggedInUser, onLogout, onPhotoUploaded }) {
               </Button>
               <Button
                 variant="contained"
-                color="inherit"
+                className="topbar-logout-button"
                 onClick={handleLogout}
               >
                 Logout
               </Button>
             </>
-          ) : (
-            <Typography variant="body1" color="inherit">
-              Please Login
-            </Typography>
-          )}
+          ) : null}
         </div>
-        <div>
+        <div className="topbar-status">
           {uploadError && (
             <Typography
               variant="caption"
               color="inherit"
               className="topbar-error"
             >
-              uploadError
+              {uploadError}
             </Typography>
           )}
           {uploadMessage && (
             <Typography
               variant="caption"
               color="inherit"
-              className="topbar-mesage"
+              className="topbar-message"
             >
-              uploadMesage
+              {uploadMessage}
             </Typography>
           )}
         </div>
