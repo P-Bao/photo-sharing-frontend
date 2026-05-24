@@ -119,14 +119,15 @@ function LoginRegister({ onLogin }) {
         <Button variant="contained" type="submit">
           Login
         </Button>
+      </Box>
 
-        <Divider />
+      <Divider />
 
-        <Box
-          className="register-section"
-          component="form"
-          onSubmit={registerForm.handleSubmit(handleRegister)}
-        >
+      <Box
+        className="register-section"
+        component="form"
+        onSubmit={registerForm.handleSubmit(handleRegister)}
+      >
           <Typography variant="h5">Register</Typography>
           {registerForm.formState.errors.root?.server && (
             <Alert severity="error">
@@ -229,7 +230,6 @@ function LoginRegister({ onLogin }) {
           <Button variant="contained" type="submit">
             Register
           </Button>
-        </Box>
       </Box>
     </Paper>
   );

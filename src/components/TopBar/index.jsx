@@ -91,8 +91,8 @@ function TopBar({ loggedInUser, onLogout, onPhotoUploaded }) {
           {context}
         </Typography>
 
-        <div className="topbar-actions">
-          {loggedInUser ? (
+        {loggedInUser && (
+          <div className="topbar-actions">
             <>
               <Typography variant="body1" className="topbar-greeting">
                 Hi, {loggedInUser.first_name}
@@ -118,8 +118,8 @@ function TopBar({ loggedInUser, onLogout, onPhotoUploaded }) {
                 Logout
               </Button>
             </>
-          ) : null}
-        </div>
+          </div>
+        )}
         <div className="topbar-status">
           {uploadError && (
             <Typography

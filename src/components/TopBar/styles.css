@@ -1,7 +1,7 @@
 .topbar-appBar {
   min-height: 64px;
   justify-content: center;
-  background-color: #1f2937 !important;
+  background-color: #1976d2 !important;
 }
 
 .topbar-toolBar {
@@ -24,7 +24,7 @@
 .topbar-title {
   font-size: 1.1rem;
   font-style: italic;
-  color: #f3f4f6;
+  color: #ffffff;
   flex: 1 1 auto;
   text-align: center;
   min-width: 0;
@@ -40,31 +40,31 @@
 }
 
 .topbar-greeting {
-  color: #e5e7eb;
+  color: #ffffff;
   white-space: nowrap;
 }
 
 .topbar-upload-button {
-  background-color: #2563eb !important;
+  background-color: #2e7d32 !important;
   color: #ffffff !important;
   text-transform: none !important;
   font-weight: 600 !important;
 }
 
 .topbar-upload-button:hover {
-  background-color: #1d4ed8 !important;
+  background-color: #1b5e20 !important;
 }
 
 .topbar-logout-button {
-  background-color: #f9fafb !important;
-  color: #374151 !important;
+  background-color: #ffffff !important;
+  color: #1976d2 !important;
   text-transform: none !important;
   font-weight: 600 !important;
   border: 1px solid #d1d5db !important;
 }
 
 .topbar-logout-button:hover {
-  background-color: #e5e7eb !important;
+  background-color: #e3f2fd !important;
 }
 
 .topbar-status {
