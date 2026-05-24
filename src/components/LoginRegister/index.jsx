@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   Alert,
@@ -98,7 +98,7 @@ function LoginRegister({ onLogin }) {
           label="Login name"
           {...loginForm.register("login_name", {
             required: true,
-            onChange: () => loginForm.clearError("root.server"),
+            onChange: () => loginForm.clearErrors("root.server"),
           })}
         />
         {loginForm.formState.errors.login_name && (

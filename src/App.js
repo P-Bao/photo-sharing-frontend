@@ -1,7 +1,7 @@
 import "./App.css";
 
 import React, { useState, useEffect } from "react";
-import { Grid, Typography, Paper } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import {
   BrowserRouter as Router,
   Route,
@@ -14,7 +14,7 @@ import UserDetail from "./components/UserDetail";
 import UserList from "./components/UserList";
 import UserPhotos from "./components/UserPhotos";
 import LoginRegister from "./components/LoginRegister";
-import { fetchModel } from "./lib/fetchModelData";
+import fetchModel from "./lib/fetchModelData";
 
 function ProtectedRoute({ authChecked, loggedInUser, children }) {
   if (!authChecked) {

@@ -27,7 +27,7 @@ async function fetchModel(url, options = {}) {
       typeof body !== "string"
     ) {
       requestHeaders["Content-Type"] = "application/json";
-      requestBody = JSON.stringfy(body);
+      requestBody = JSON.stringify(body);
     }
 
     const response = await fetch(`${baseUrl}/${url}`, {
