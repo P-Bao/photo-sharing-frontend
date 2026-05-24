@@ -16,7 +16,7 @@ import "./styles.css";
 const emptyRegister = {
   login_name: "",
   password: "",
-  confirm_password: "",
+  confirmPassword: "",
   first_name: "",
   last_name: "",
   location: "",
@@ -54,7 +54,7 @@ function LoginRegister({ onLogin }) {
   };
 
   const handleRegister = async (registerData) => {
-    if (registerData.password !== registerData.confirm_password) {
+    if (registerData.password !== registerData.confirmPassword) {
       registerForm.setError("confirmPassword", {
         type: "validate",
         message: "Password must match",
@@ -63,8 +63,8 @@ function LoginRegister({ onLogin }) {
     }
 
     try {
-      const { confirm_password, ...payload } = registerData;
-      const result = fetchModel(`/user`, {
+      const { confirmPassword, ...payload } = registerData;
+      const result = await fetchModel(`/user`, {
         method: "POST",
         body: payload,
       });
