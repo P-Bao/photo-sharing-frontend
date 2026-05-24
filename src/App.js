@@ -21,7 +21,7 @@ function ProtectedRoute({ authChecked, loggedInUser, children }) {
     return null;
   }
   if (!loggedInUser) {
-    <Navigate to="/login" replace />;
+    return <Navigate to="/login" replace />;
   }
   return children;
 }
@@ -31,13 +31,13 @@ const App = (props) => {
   const [authChecked, setAuthChecked] = useState(false);
   const [activityVersion, setActivityVersion] = useState(0);
 
-  const refreshActivity = () => setActivityVersion(activityVersion + 1);
+  const refreshActivity = () => setActivityVersion((version) => version + 1);
 
   useEffect(() => {
     fetchModel("admin/current")
       .then((user) => setLoggedInUser(user))
       .catch(() => setLoggedInUser(null))
-      .finally(setAuthChecked(true));
+      .finally(() => setAuthChecked(true));
   }, []);
 
   return (
