@@ -22,7 +22,7 @@ import fetchModel, { getApiUrl } from "../../lib/fetchModelData";
 /**
  * Define UserPhotos, a React component of Project 4.
  */
-function UserPhotos({ onCommentAdd, activityVersion = 0 }) {
+function UserPhotos({ onCommentAdded, activityVersion = 0 }) {
   const { userId } = useParams();
   // const photos = models.photoOfUserModel(userId);
   const [photos, setPhotos] = useState([]);
@@ -54,14 +54,14 @@ function UserPhotos({ onCommentAdd, activityVersion = 0 }) {
     if (photoId !== currentPhotoId) {
       setCurrentPhotoId(photoId);
       setCommentDraft("");
-      setCommentError("Please enter a command");
+      setCommentError("Please enter a comment");
       return;
     }
 
     try {
       await fetchModel(`commentsOfPhoto/${photoId}`, {
         method: "POST",
-        body: { commentDraft },
+        body: { comment: commentDraft },
       });
 
       loadPhotos();
@@ -69,8 +69,8 @@ function UserPhotos({ onCommentAdd, activityVersion = 0 }) {
       setCommentDraft("");
       setCommentError("");
 
-      if (onCommentAdd) {
-        onCommentAdd();
+      if (onCommentAdded) {
+        onCommentAdded();
       }
     } catch (error) {
       setCommentError(error.message || "Unable to add comment");
@@ -119,10 +119,10 @@ function UserPhotos({ onCommentAdd, activityVersion = 0 }) {
             <Box
               className="comment-form"
               component="form"
-              onSubmit={handleAddComment}
+              onSubmit={handleAddComment(photo._id)}
             >
               {currentPhotoId !== photo._id && commentError && (
-                <Alert servity="error">{commentError}</Alert>
+                <Alert severity="error">{commentError}</Alert>
               )}
               <TextField
                 label="Add comment"
