@@ -1,0 +1,17 @@
+.login-register-container {
+  padding: 24px;
+  display: grid;
+  gap: 24px;
+}
+
+.login-section,
+.register-section {
+  display: grid;
+  gap: 16px;
+}
+
+.form-error {
+  color: #d32f2f;
+  font-size: 0.75rem;
+  margin: -10px 0 0;
+}

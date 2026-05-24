@@ -1,0 +1,45 @@
+.user-detail-container {
+    padding: 24px;
+    margin: 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* Hiệu ứng đổ bóng nhẹ để tạo chiều sâu cho Paper */
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+}
+
+.user-name {
+    color: #1976d2; /* Màu xanh chủ đạo của Material-UI */
+    font-weight: 500;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.user-info-item {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: baseline;
+}
+
+.info-label {
+    font-weight: bold;
+    min-width: 120px;
+    color: #555;
+    display: inline-block;
+}
+
+.user-description-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fafafa;
+    border-left: 4px solid #1976d2;
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+}
+
+.photo-link-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
